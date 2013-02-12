@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="ControlMethodInvokerTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ControlMethodInvokerTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	<Page.Resources>
+        <local:MainViewModel x:Key="vm" />
+	</Page.Resources>
+
+    <Grid DataContext="{Binding Source={StaticResource ResourceKey=vm}}" Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    	<local:NameList Names="{Binding Names}" EditCommand="{Binding EditCommand}" HorizontalAlignment="Center" Height="300" VerticalAlignment="Top" Width="300" Margin="0,271,0,0"/>
+        <TextBlock HorizontalAlignment="Center" Height="39" Margin="0,174,0,0" TextWrapping="Wrap" Text="{Binding SelectedName}"
+                   VerticalAlignment="Top" Width="332" FontSize="29.333"/>
+    </Grid>
+</Page>
